@@ -24,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -87,7 +88,7 @@ body.dark {
 .navbar {
   position: sticky;
   top: 20px;
-  z-index: 100;
+  z-index: 1000;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(108, 92, 231, 0.2);
@@ -157,6 +158,22 @@ body.dark .navbar {
 
 .theme-toggle:hover {
   background: rgba(108, 92, 231, 0.1);
+}
+
+#theme-toggle {
+  /* inherits from .theme-toggle */
+}
+
+.theme-toggle .fa-sun {
+  display: none;
+}
+
+body.dark .theme-toggle .fa-moon {
+  display: none;
+}
+
+body.dark .theme-toggle .fa-sun {
+  display: inline-block;
 }
 
 /* ===== HERO SECTION ===== */
@@ -529,9 +546,7 @@ body.dark .hero-desc {
   color: var(--accent);
 }
 
-/* Add to existing style.css */
-
-/* Game Stats */
+/* ===== GAME STATS ===== */
 .game-stats {
   display: flex;
   justify-content: space-between;
@@ -563,7 +578,7 @@ body.dark .hero-desc {
   text-align: right;
 }
 
-/* Power-up Bar */
+/* ===== POWER-UP BAR ===== */
 .powerup-bar {
   display: flex;
   gap: 1rem;
@@ -599,7 +614,7 @@ body.dark .hero-desc {
   color: white;
 }
 
-/* Game Controls Panel */
+/* ===== GAME CONTROLS PANEL ===== */
 .game-controls-panel {
   display: flex;
   justify-content: space-between;
@@ -641,7 +656,7 @@ body.dark .hero-desc {
   box-shadow: 0 5px 20px rgba(0, 255, 245, 0.4);
 }
 
-/* Difficulty Selector */
+/* ===== DIFFICULTY SELECTOR ===== */
 .difficulty-selector {
   display: flex;
   align-items: center;
@@ -677,7 +692,7 @@ body.dark .hero-desc {
   color: white;
 }
 
-/* Achievement Toast */
+/* ===== ACHIEVEMENT TOAST ===== */
 .achievement-toast {
   position: fixed;
   top: 100px;
@@ -692,7 +707,7 @@ body.dark .hero-desc {
   font-weight: 600;
   box-shadow: 0 10px 30px rgba(108, 92, 231, 0.5);
   transition: right 0.3s ease;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 .achievement-toast.show {
@@ -703,7 +718,7 @@ body.dark .hero-desc {
   font-size: 1.5rem;
 }
 
-/* Game Highlight in Contact */
+/* ===== GAME HIGHLIGHT ===== */
 .game-highlight {
   background: rgba(108, 92, 231, 0.1);
   border-radius: 30px;
@@ -724,7 +739,7 @@ body.dark .hero-desc {
   font-weight: 700;
 }
 
-/* Boss Warning */
+/* ===== BOSS WARNING ===== */
 .boss-warning {
   position: absolute;
   top: 50%;
@@ -744,7 +759,7 @@ body.dark .hero-desc {
   50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
 }
 
-/* Canvas sizing */
+/* ===== CANVAS ===== */
 #gameCanvas {
   width: 100%;
   height: auto;
@@ -753,6 +768,16 @@ body.dark .hero-desc {
   border: 3px solid var(--accent);
   box-shadow: 0 0 40px rgba(0, 255, 245, 0.3);
   cursor: none;
+}
+
+#gameCanvas:focus {
+  outline: none;
+}
+
+/* ===== GAME CONTAINER ===== */
+.game-container {
+  position: relative;
+  z-index: 10;
 }
 
 /* ===== CONTACT SECTION ===== */
@@ -915,8 +940,108 @@ body.dark .hero-desc {
     font-size: 4rem;
   }
   
-  .game-controls {
+  .game-controls-panel {
     flex-direction: column;
     gap: 1rem;
   }
+  
+  .control-group {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .difficulty-selector {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .game-stats {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .stat-block {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .powerup-bar {
+    flex-wrap: wrap;
+  }
+  
+  .powerup-slot {
+    min-width: 120px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .stat-value {
+    font-size: 1.5rem;
+    min-width: 60px;
+  }
+  
+  .stat-icon {
+    font-size: 1.2rem;
+  }
+}
+
+/* ===== SELECTION STYLING ===== */
+::selection {
+  background: var(--accent);
+  color: var(--bg-dark);
+}
+
+::-moz-selection {
+  background: var(--accent);
+  color: var(--bg-dark);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ===== FIREFOX SUPPORT ===== */
+@supports (-moz-backdrop-filter: none) {
+  .navbar,
+  .game-stats,
+  .powerup-slot,
+  .contact-container {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .navbar,
+  .game-container,
+  .achievement-toast,
+  .theme-toggle {
+    display: none;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+}
+
+/* ===== TOUCH TAP HIGHLIGHT ===== */
+* {
+  -webkit-tap-highlight-color: transparent;
 }

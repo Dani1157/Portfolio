@@ -1,6 +1,6 @@
 // ============================================
-// IMPROVED PORTFOLIO SCRIPT - DANI
-// Features: theme toggle, typing, better game with power-ups!
+// ULTIMATE SPACE DEFENDER - Complete Game + Portfolio
+// Features: 20 levels, Boss fights, Power-ups, Achievements
 // ============================================
 
 (function() {
@@ -13,39 +13,41 @@
     icon.classList.toggle('fa-sun');
   });
 
-  // ---------- PROJECTS DATA (improved) ----------
- const projects = [
-  {
-    title: 'S&R Family and Friends – Cleaning Website',
-    impact: 'Delivered a high-performance business website scoring 98–100 across Lighthouse metrics',
-    problem: 'Local cleaning businesses often lack professional, secure, and high-converting websites to generate trust and inquiries',
-    solution: 'Designed and developed a fully responsive, security-focused cleaning service website with interactive features including review system, dynamic pricing calculator, form validation, dark mode, and performance optimization',
-    result: 'Achieved 100/100 desktop Lighthouse score, implemented enterprise-level front-end security features, and created a scalable foundation for future booking and customer portal integration',
-    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'EmailJS', 'GitHub Pages'],
-    github: 'https://github.com/Dani1157/Cleaning-Web',
-    live: 'https://dani1157.github.io/Cleaning-Web/'
-  },
-  {
-    title: 'Terminal Battleship – Strategy Game in Python',
-    impact: 'Developed a fully interactive terminal-based strategy game with dynamic board generation and win/loss logic handling',
-    problem: 'Many beginner games lack structured game logic, input validation, and replayability in a terminal environment',
-    solution: 'Engineered a Python-based Battleship game featuring randomized ship placement, bullet management system, real-time board tracking, and structured game state control',
-    result: 'Delivered a replayable command-line game with robust input handling, win/lose conditions, and scalable architecture for future features like difficulty levels and multiplayer',
-    tech: ['Python', 'Object-Oriented Programming', 'Git', 'GitHub', 'Heroku'],
-    github: 'https://github.com/Dani1157/battleshipsgame1',
-  },
-  {
-    title: 'Rock, Paper, Scissors – Interactive Web Game',
-    impact: 'Built a fully interactive browser-based game with real-time score tracking and dynamic result rendering',
-    problem: 'Simple browser games often lack structured logic, proper state management, and clear UX feedback for users',
-    solution: 'Developed a two-page responsive web application using JavaScript to handle game logic, random AI move generation, score tracking, DOM manipulation, and restart functionality without page refresh',
-    result: 'Delivered a smooth, user-friendly game experience with validated input handling, responsive design, and cross-browser compatibility deployed via GitHub Pages',
-    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Git', 'GitHub Pages'],
-    github: 'Rock-Paper-Scissors-game',
-    live: 'https://dani1157.github.io/Rock-Paper-Scissors-game/'
-  }
-];
- const projectsGrid = document.getElementById('projectsGrid');
+  // ---------- PROJECTS DATA ----------
+  const projects = [
+    {
+      title: 'S&R Family and Friends – Cleaning Website',
+      impact: 'Delivered a high-performance business website scoring 98–100 across Lighthouse metrics',
+      problem: 'Local cleaning businesses often lack professional, secure, and high-converting websites to generate trust and inquiries',
+      solution: 'Designed and developed a fully responsive, security-focused cleaning service website with interactive features including review system, dynamic pricing calculator, form validation, dark mode, and performance optimization',
+      result: 'Achieved 100/100 desktop Lighthouse score, implemented enterprise-level front-end security features, and created a scalable foundation for future booking and customer portal integration',
+      tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'EmailJS', 'GitHub Pages'],
+      github: 'https://github.com/Dani1157/Cleaning-Web',
+      live: 'https://dani1157.github.io/Cleaning-Web/'
+    },
+    {
+      title: 'Terminal Battleship – Strategy Game in Python',
+      impact: 'Developed a fully interactive terminal-based strategy game with dynamic board generation and win/loss logic handling',
+      problem: 'Many beginner games lack structured game logic, input validation, and replayability in a terminal environment',
+      solution: 'Engineered a Python-based Battleship game featuring randomized ship placement, bullet management system, real-time board tracking, and structured game state control',
+      result: 'Delivered a replayable command-line game with robust input handling, win/lose conditions, and scalable architecture for future features like difficulty levels and multiplayer',
+      tech: ['Python', 'Object-Oriented Programming', 'Git', 'GitHub', 'Heroku'],
+      github: 'https://github.com/Dani1157/battleshipsgame1',
+      live: '#'
+    },
+    {
+      title: 'Rock, Paper, Scissors – Interactive Web Game',
+      impact: 'Built a fully interactive browser-based game with real-time score tracking and dynamic result rendering',
+      problem: 'Simple browser games often lack structured logic, proper state management, and clear UX feedback for users',
+      solution: 'Developed a two-page responsive web application using JavaScript to handle game logic, random AI move generation, score tracking, DOM manipulation, and restart functionality without page refresh',
+      result: 'Delivered a smooth, user-friendly game experience with validated input handling, responsive design, and cross-browser compatibility deployed via GitHub Pages',
+      tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Git', 'GitHub Pages'],
+      github: 'https://github.com/Dani1157/Rock-Paper-Scissors-game',
+      live: 'https://dani1157.github.io/Rock-Paper-Scissors-game/'
+    }
+  ];
+
+  const projectsGrid = document.getElementById('projectsGrid');
   projects.forEach(project => {
     const card = document.createElement('div');
     card.className = 'project-card';
@@ -68,8 +70,7 @@
     projectsGrid.appendChild(card);
   });
 
-  // ----------  SPACE INVADERS GAME ----------
- // ========== EPIC GAME SYSTEM ==========
+  // ========== EPIC GAME SYSTEM ==========
   const canvas = document.getElementById('gameCanvas');
   const ctx = canvas.getContext('2d');
   
@@ -98,7 +99,6 @@
   let highScore = localStorage.getItem('spaceDefenderHighScore') || 0;
   let totalLevelsCompleted = localStorage.getItem('totalLevelsCompleted') || 0;
   let difficulty = 'normal';
-  let frame = 0;
   let achievements = [];
 
   // Player
@@ -168,13 +168,10 @@
     enemyBullets = [];
     
     if (level % 5 === 0) {
-      // Boss level
       initBoss();
     } else {
-      // Regular level - more enemies as level increases
       const rows = Math.min(3 + Math.floor(level / 3), 6);
       const cols = Math.min(6 + Math.floor(level / 2), 10);
-      const enemyTypes = ['normal', 'fast', 'tank'];
       
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
@@ -197,11 +194,9 @@
       }
     }
     
-    // Reset enemy direction
     enemyDirection = 1;
     enemySpeed = DIFFICULTY[difficulty].enemySpeed;
     
-    // Show level announcement
     showAchievement(`LEVEL ${level}`, level % 5 === 0 ? '⚠️ BOSS INCOMING ⚠️' : 'FIGHT!');
   }
 
@@ -217,8 +212,6 @@
       height: 150,
       health: 50 * level,
       maxHealth: 50 * level,
-      speed: 2,
-      attackPattern: 1,
       patternTimer: 0,
       alive: true
     };
@@ -280,7 +273,6 @@
     highScoreSpan.textContent = String(highScore).padStart(4, '0');
     totalLevelsSpan.textContent = totalLevelsCompleted;
     
-    // Update power-up UI
     document.getElementById('powerup1').classList.toggle('active', player.powerups.rapidFire);
     document.getElementById('powerup2').classList.toggle('active', player.powerups.spreadShot);
     document.getElementById('powerup3').classList.toggle('active', player.powerups.shield);
@@ -341,12 +333,10 @@
     if (!gameActive || paused) return;
     
     if (player.powerups.spreadShot) {
-      // Spread shot - 3 bullets
       bullets.push({ x: player.x + player.width/2 - 3, y: player.y, width: 6, height: 12, vx: -2 });
       bullets.push({ x: player.x + player.width/2 - 3, y: player.y, width: 6, height: 12, vx: 0 });
       bullets.push({ x: player.x + player.width/2 - 3, y: player.y, width: 6, height: 12, vx: 2 });
     } else {
-      // Normal shot
       bullets.push({ x: player.x + player.width/2 - 3, y: player.y, width: 6, height: 12, vx: 0 });
     }
   }
@@ -368,11 +358,9 @@
   function update() {
     if (!gameActive || paused) return;
 
-    // Player movement
     if (keys['ArrowLeft'] && player.x > 5) player.x -= player.speed;
     if (keys['ArrowRight'] && player.x < CANVAS_WIDTH - player.width - 5) player.x += player.speed;
 
-    // Shooting
     const cooldownMax = player.powerups.rapidFire ? RAPID_COOLDOWN : NORMAL_COOLDOWN;
     if (keys['Space'] && bulletCooldown <= 0) {
       shootBullet();
@@ -380,7 +368,6 @@
     }
     if (bulletCooldown > 0) bulletCooldown--;
 
-    // Update power-up timers
     Object.keys(player.powerupTimers).forEach(key => {
       if (player.powerupTimers[key] > 0) {
         player.powerupTimers[key]--;
@@ -390,20 +377,17 @@
       }
     });
 
-    // Move bullets
     bullets = bullets.filter(bullet => {
       bullet.y -= BULLET_SPEED;
       bullet.x += bullet.vx || 0;
       return bullet.y > -20 && bullet.x > -20 && bullet.x < CANVAS_WIDTH + 20;
     });
 
-    // Move enemy bullets
     enemyBullets = enemyBullets.filter(bullet => {
       bullet.y += bullet.speed;
       return bullet.y < CANVAS_HEIGHT + 20;
     });
 
-    // Check bullet-enemy collisions
     bullets.forEach((bullet, bulletIndex) => {
       if (bossActive && boss && boss.alive) {
         if (bullet.x < boss.x + boss.width &&
@@ -422,7 +406,6 @@
             createParticles(boss.x + boss.width/2, boss.y + boss.height/2, '#ffd700', 30);
             unlockAchievement('bossSlayer');
             
-            // Boss defeated - next level
             level++;
             totalLevelsCompleted++;
             localStorage.setItem('totalLevelsCompleted', totalLevelsCompleted);
@@ -450,16 +433,13 @@
           if (enemy.health <= 0) {
             enemy.alive = false;
             
-            // Score based on enemy type
             let points = 10;
             if (enemy.type === 'tank') points = 30;
             if (enemy.type === 'fast') points = 20;
             score += points;
             
-            // Achievements
             if (score >= 5000) unlockAchievement('sharpshooter');
             
-            // Spawn power-up (10% chance)
             if (Math.random() < 0.1) {
               powerUps.push({
                 x: enemy.x + enemy.width/2 - 15,
@@ -476,10 +456,8 @@
       });
     });
 
-    // Remove dead bullets
     bullets = bullets.filter(b => b.alive !== false);
 
-    // Move enemies (non-boss)
     if (!bossActive) {
       let edgeHit = false;
       enemies.forEach(enemy => {
@@ -505,7 +483,6 @@
         });
       }
 
-      // Check if level complete
       if (enemies.every(e => !e.alive) && !bossActive) {
         level++;
         totalLevelsCompleted++;
@@ -520,11 +497,9 @@
         }
       }
     } else {
-      // Boss movement and attacks
       if (boss && boss.alive) {
         boss.patternTimer++;
         
-        // Boss movement patterns
         switch(bossPhase) {
           case 1:
             boss.x += Math.sin(boss.patternTimer * 0.05) * 3;
@@ -535,14 +510,12 @@
             if (boss.patternTimer > 400) bossPhase = 3;
             break;
           case 3:
-            // Circular pattern
             boss.x += Math.cos(boss.patternTimer * 0.03) * 4;
             boss.y += Math.sin(boss.patternTimer * 0.03) * 3;
             if (boss.patternTimer > 600) bossPhase = 1;
             break;
         }
         
-        // Boss shooting
         if (boss.patternTimer % 30 === 0) {
           for (let i = 0; i < 5; i++) {
             enemyBullets.push({
@@ -558,17 +531,14 @@
       }
     }
 
-    // Move power-ups
     powerUps.forEach((powerUp, index) => {
       powerUp.y += 3;
       
-      // Check collection
       if (powerUp.x < player.x + player.width &&
           powerUp.x + powerUp.width > player.x &&
           powerUp.y < player.y + player.height &&
           powerUp.y + powerUp.height > player.y) {
         
-        // Apply power-up effect
         switch(powerUp.type) {
           case 'rapid':
             player.powerups.rapidFire = true;
@@ -596,13 +566,11 @@
         updateDisplay();
       }
       
-      // Remove if off screen
       if (powerUp.y > CANVAS_HEIGHT) {
         powerUps.splice(index, 1);
       }
     });
 
-    // Check player collision with enemies
     if (!player.powerups.shield) {
       enemies.forEach(enemy => {
         if (!enemy.alive) return;
@@ -619,7 +587,6 @@
             gameActive = false;
             showAchievement('GAME OVER', `Final Score: ${score}`);
           } else {
-            // Respawn with brief invincibility
             player.powerups.shield = true;
             player.powerupTimers.shield = 100;
           }
@@ -630,7 +597,6 @@
       });
     }
 
-    // Check collision with enemy bullets
     if (!player.powerups.shield) {
       enemyBullets.forEach((bullet, index) => {
         if (player.x < bullet.x + bullet.width &&
@@ -655,7 +621,6 @@
       });
     }
 
-    // Update particles
     particles = particles.filter(p => {
       p.x += p.vx;
       p.y += p.vy;
@@ -668,7 +633,6 @@
   function draw() {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     
-    // Draw stars
     ctx.fillStyle = '#0a0c14';
     ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     
@@ -677,7 +641,6 @@
       ctx.fillRect(Math.random() * CANVAS_WIDTH, Math.random() * CANVAS_HEIGHT, 1, 1);
     }
 
-    // Draw player
     ctx.shadowColor = '#00fff5';
     ctx.shadowBlur = 20;
     
@@ -697,24 +660,20 @@
     ctx.closePath();
     ctx.fill();
 
-    // Draw bullets
     ctx.shadowBlur = 10;
     ctx.fillStyle = '#00fff5';
     bullets.forEach(bullet => {
       ctx.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
     });
 
-    // Draw enemy bullets
     ctx.fillStyle = '#ff79c6';
     enemyBullets.forEach(bullet => {
       ctx.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
     });
 
-    // Draw enemies
     enemies.forEach(enemy => {
       if (!enemy.alive) return;
       
-      // Color based on type
       if (enemy.type === 'tank') {
         ctx.fillStyle = '#ffb86c';
         ctx.shadowColor = '#ffb86c';
@@ -728,25 +687,21 @@
       
       ctx.fillRect(enemy.x, enemy.y, enemy.width, enemy.height);
       
-      // Health bar for tanks
       if (enemy.health > 1) {
         ctx.fillStyle = '#50fa7b';
         ctx.fillRect(enemy.x, enemy.y - 5, enemy.width * (enemy.health / 3), 3);
       }
     });
 
-    // Draw boss
     if (bossActive && boss && boss.alive) {
       ctx.fillStyle = '#ff5555';
       ctx.shadowColor = '#ff5555';
       ctx.shadowBlur = 30;
       ctx.fillRect(boss.x, boss.y, boss.width, boss.height);
       
-      // Boss health bar
       ctx.fillStyle = '#ffb86c';
       ctx.fillRect(boss.x, boss.y - 15, boss.width * (boss.health / boss.maxHealth), 8);
       
-      // Boss warning if low health
       if (boss.health < boss.maxHealth * 0.3) {
         ctx.font = 'bold 24px Inter';
         ctx.fillStyle = '#ff5555';
@@ -755,11 +710,9 @@
       }
     }
 
-    // Draw power-ups
     powerUps.forEach(powerUp => {
       ctx.shadowBlur = 15;
       
-      // Color based on type
       switch(powerUp.type) {
         case 'rapid': ctx.fillStyle = '#ffb86c'; break;
         case 'spread': ctx.fillStyle = '#ff79c6'; break;
@@ -778,7 +731,6 @@
       ctx.fillText(powerUp.type[0].toUpperCase(), powerUp.x + 10, powerUp.y + 22);
     });
 
-    // Draw particles
     particles.forEach(p => {
       ctx.shadowBlur = 10;
       ctx.fillStyle = p.color;
@@ -787,7 +739,6 @@
     });
     ctx.globalAlpha = 1;
 
-    // Game over screen
     if (!gameActive) {
       ctx.shadowBlur = 0;
       ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
@@ -804,7 +755,6 @@
       ctx.fillText(`Level: ${level}`, CANVAS_WIDTH/2, CANVAS_HEIGHT/2 + 100);
     }
 
-    // Pause screen
     if (paused && gameActive) {
       ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
       ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -824,6 +774,19 @@
     draw();
     requestAnimationFrame(gameLoop);
   }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const offset = 100;
+        const targetPos = target.offsetTop - offset;
+        window.scrollTo({ top: targetPos, behavior: 'smooth' });
+      }
+    });
+  });
 
   // Start game
   resetGame();
