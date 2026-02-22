@@ -6,8 +6,8 @@
   <title>Dani · creative dev portfolio</title>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts for modern look -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fira+Code&display=swap" rel="stylesheet">
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -17,7 +17,7 @@
   <div class="blob blob-2"></div>
   <div class="gradient-bg"></div>
 
-  <!-- Sticky Navbar -->
+  <!-- Sticky Navbar (same as before) -->
   <nav class="navbar">
     <div class="logo">Dani<span></span></div>
     <div class="nav-links">
@@ -33,10 +33,10 @@
     </div>
   </nav>
 
-  <!-- HERO SECTION - fresh minimalist design -->
+  <!-- HERO SECTION (same as before) -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <span class="hero-tag">✧ developer & creator ✧</span>
+      <span class="hero-tag">✧ Developer & creator ✧</span>
       <h1 class="glitch" data-text="Dani">Dani</h1>
       <p class="hero-desc">I craft <span class="gradient-text">digital experiences</span> that live at the intersection of code and creativity.</p>
       <div class="hero-stats">
@@ -72,7 +72,7 @@
     </div>
   </section>
 
-  <!-- WORK SECTION (replacing old about) -->
+  <!-- WORK SECTION (same as before) -->
   <section id="work" class="section">
     <div class="section-header">
       <span class="section-subtitle">how i work</span>
@@ -97,7 +97,7 @@
     </div>
   </section>
 
-  <!-- SKILLS SECTION - modern cards -->
+  <!-- SKILLS SECTION (same as before) -->
   <section id="skills" class="section">
     <div class="section-header">
       <span class="section-subtitle">my toolbox</span>
@@ -141,7 +141,7 @@
     </div>
   </section>
 
-  <!-- PROJECTS SECTION - improved cards -->
+  <!-- PROJECTS SECTION (same as before) -->
   <section id="projects" class="section">
     <div class="section-header">
       <span class="section-subtitle">featured work</span>
@@ -150,38 +150,88 @@
     <div class="projects-grid" id="projectsGrid"></div>
   </section>
 
-  <!-- IMPROVED ARCADE SECTION - much better game -->
+  <!-- EPIC ARCADE SECTION - MUCH BETTER GAME WITH LEVELS -->
   <section id="arcade" class="section">
     <div class="section-header">
       <span class="section-subtitle">play time</span>
-      <h2 class="section-title">Space Defender <span class="gradient-text">✦</span></h2>
+      <h2 class="section-title">ULTIMATE <span class="gradient-text">SPACE DEFENDER</span></h2>
     </div>
     <div class="game-wrapper">
       <div class="game-container">
-        <canvas id="gameCanvas" width="800" height="500"></canvas>
-        <div class="game-controls">
-          <div class="game-score">
-            <span class="score-label">SCORE</span>
-            <span class="score-value" id="gameScore">0000</span>
+        <!-- Game Stats Bar -->
+        <div class="game-stats">
+          <div class="stat-block">
+            <span class="stat-icon"><i class="fas fa-trophy"></i></span>
+            <span class="stat-label">LEVEL</span>
+            <span class="stat-value" id="gameLevel">1</span>
           </div>
-          <div class="game-lives">
-            <span class="lives-label">LIVES</span>
-            <span class="lives-value" id="gameLives">3</span>
+          <div class="stat-block">
+            <span class="stat-icon"><i class="fas fa-star"></i></span>
+            <span class="stat-label">SCORE</span>
+            <span class="stat-value" id="gameScore">0000</span>
           </div>
-          <button id="restartBtn" class="game-restart">
-            <i class="fas fa-redo-alt"></i> New Game
-          </button>
+          <div class="stat-block">
+            <span class="stat-icon"><i class="fas fa-heart"></i></span>
+            <span class="stat-label">LIVES</span>
+            <span class="stat-value" id="gameLives">3</span>
+          </div>
         </div>
+
+        <!-- Main Game Canvas -->
+        <canvas id="gameCanvas" width="900" height="600"></canvas>
+
+        <!-- Power-up Bar -->
+        <div class="powerup-bar">
+          <div class="powerup-slot" id="powerup1">
+            <i class="fas fa-bolt"></i>
+            <span class="powerup-name">Rapid Fire</span>
+          </div>
+          <div class="powerup-slot" id="powerup2">
+            <i class="fas fa-expand"></i>
+            <span class="powerup-name">Spread Shot</span>
+          </div>
+          <div class="powerup-slot" id="powerup3">
+            <i class="fas fa-shield-alt"></i>
+            <span class="powerup-name">Shield</span>
+          </div>
+        </div>
+
+        <!-- Game Controls -->
+        <div class="game-controls-panel">
+          <div class="control-group">
+            <button id="restartBtn" class="game-btn primary">
+              <i class="fas fa-redo-alt"></i> New Game
+            </button>
+            <button id="pauseBtn" class="game-btn secondary">
+              <i class="fas fa-pause"></i> Pause
+            </button>
+          </div>
+          <div class="difficulty-selector">
+            <span>Difficulty:</span>
+            <button class="difficulty-btn active" data-diff="normal">Normal</button>
+            <button class="difficulty-btn" data-diff="hard">Hard</button>
+            <button class="difficulty-btn" data-diff="insane">Insane</button>
+          </div>
+        </div>
+
+        <!-- Instructions -->
         <div class="game-instructions">
-          <span><i class="fas fa-arrow-left"></i> <i class="fas fa-arrow-right"></i> move</span>
-          <span><i class="fas fa-space-shuttle"></i> shoot</span>
-          <span>⚡ power-ups appear!</span>
+          <span><i class="fas fa-arrow-left"></i> <i class="fas fa-arrow-right"></i> Move</span>
+          <span><i class="fas fa-space-shuttle"></i> Shoot</span>
+          <span><i class="fas fa-bolt"></i> Collect power-ups</span>
+          <span><i class="fas fa-skull"></i> Boss every 5 levels</span>
+        </div>
+
+        <!-- Achievement Notification (hidden by default) -->
+        <div class="achievement-toast" id="achievementToast">
+          <i class="fas fa-medal"></i>
+          <span id="achievementText">Achievement Unlocked!</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT SECTION - cleaner form -->
+  <!-- CONTACT SECTION (updated with game stats) -->
   <section id="contact" class="section">
     <div class="section-header">
       <span class="section-subtitle">let's connect</span>
@@ -191,12 +241,15 @@
       <div class="contact-info">
         <h3>Let's build something amazing together</h3>
         <p>Whether it's a project, collaboration, or just a chat about tech — I'm always open to new opportunities.</p>
-        <div class="social-links">
+        <div class="game-highlight">
+          <p class="highlight-text">🏆 High Score: <span id="highScore">0000</span></p>
+          <p class="highlight-text">⭐ Levels Completed: <span id="totalLevels">0</span></p>
+        </div>
+         <div class="social-links">
           <a href="https://github.com/Dani1157" class="social-link"><i class="fab fa-github"></i></a>
           <a href="https://www.linkedin.com/in/dani-dudley-59776026b?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
         </div>
-      </div>
       <form class="contact-form" id="contactForm">
         <div class="form-group">
           <input type="text" placeholder="Your name" required>
@@ -218,7 +271,7 @@
   <footer class="footer">
     <div class="footer-content">
       <p>© 2026 Dani — built with 💜 and JavaScript</p>
-      <p class="footer-made">✨ interactive space shooter included ✨</p>
+      <p class="footer-made">✨ epic space shooter with 20+ levels ✨</p>
     </div>
   </footer>
 
