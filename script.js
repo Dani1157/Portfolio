@@ -15,37 +15,47 @@
 
   // ---------- PROJECTS DATA ----------
   const projects = [
-    {
-      title: 'S&R Family and Friends – Cleaning Website',
-      impact: 'Delivered a high-performance business website scoring 98–100 across Lighthouse metrics',
-      problem: 'Local cleaning businesses often lack professional, secure, and high-converting websites to generate trust and inquiries',
-      solution: 'Designed and developed a fully responsive, security-focused cleaning service website with interactive features including review system, dynamic pricing calculator, form validation, dark mode, and performance optimization',
-      result: 'Achieved 100/100 desktop Lighthouse score, implemented enterprise-level front-end security features, and created a scalable foundation for future booking and customer portal integration',
-      tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'EmailJS', 'GitHub Pages'],
-      github: 'https://github.com/Dani1157/Cleaning-Web',
-      live: 'https://dani1157.github.io/Cleaning-Web/'
-    },
-    {
-      title: 'Terminal Battleship – Strategy Game in Python',
-      impact: 'Developed a fully interactive terminal-based strategy game with dynamic board generation and win/loss logic handling',
-      problem: 'Many beginner games lack structured game logic, input validation, and replayability in a terminal environment',
-      solution: 'Engineered a Python-based Battleship game featuring randomized ship placement, bullet management system, real-time board tracking, and structured game state control',
-      result: 'Delivered a replayable command-line game with robust input handling, win/lose conditions, and scalable architecture for future features like difficulty levels and multiplayer',
-      tech: ['Python', 'Object-Oriented Programming', 'Git', 'GitHub', 'Heroku'],
-      github: 'https://github.com/Dani1157/battleshipsgame1',
-      live: '#'
-    },
-    {
-      title: 'Rock, Paper, Scissors – Interactive Web Game',
-      impact: 'Built a fully interactive browser-based game with real-time score tracking and dynamic result rendering',
-      problem: 'Simple browser games often lack structured logic, proper state management, and clear UX feedback for users',
-      solution: 'Developed a two-page responsive web application using JavaScript to handle game logic, random AI move generation, score tracking, DOM manipulation, and restart functionality without page refresh',
-      result: 'Delivered a smooth, user-friendly game experience with validated input handling, responsive design, and cross-browser compatibility deployed via GitHub Pages',
-      tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Git', 'GitHub Pages'],
-      github: 'https://github.com/Dani1157/Rock-Paper-Scissors-game',
-      live: 'https://dani1157.github.io/Rock-Paper-Scissors-game/'
-    }
-  ];
+  {
+    title: 'NEXUS CSS Mentor – AI-Powered Learning Assistant',
+    impact: 'Built an intelligent CSS mentor that helps developers master web styling through natural conversation',
+    problem: 'Learning CSS is often frustrating with overly technical documentation and no interactive guidance. Beginners struggle with concepts like Flexbox, Grid, and animations without someone to explain them simply.',
+    solution: 'Created an AI-powered chat interface that teaches CSS through conversation, featuring multiple learning paths, smart contextual suggestions, real code examples, and support for multiple chat threads to organize different topics.',
+    result: 'Delivered a fully offline, zero-dependency learning tool with 10+ CSS topics, smart follow-up suggestions, persistent chat history, and a beautiful glass-morphism UI. Users can learn Flexbox, Grid, animations, and more through natural conversation.',
+    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Bootstrap 5', 'AI Pattern Matching', 'LocalStorage API'],
+    github: 'https://github.com/Dani1157/-AI-Chat-Interface',
+    live: 'https://dani1157.github.io/-AI-Chat-Interface/'
+  },
+  {
+    title: 'S&R Family and Friends – Cleaning Website',
+    impact: 'Delivered a high-performance business website scoring 98–100 across Lighthouse metrics',
+    problem: 'Local cleaning businesses often lack professional, secure, and high-converting websites to generate trust and inquiries',
+    solution: 'Designed and developed a fully responsive, security-focused cleaning service website with interactive features including review system, dynamic pricing calculator, form validation, dark mode, and performance optimization',
+    result: 'Achieved 100/100 desktop Lighthouse score, implemented enterprise-level front-end security features, and created a scalable foundation for future booking and customer portal integration',
+    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'EmailJS', 'GitHub Pages'],
+    github: 'https://github.com/Dani1157/Cleaning-Web',
+    live: 'https://dani1157.github.io/Cleaning-Web/'
+  },
+  {
+    title: 'Terminal Battleship – Strategy Game in Python',
+    impact: 'Developed a fully interactive terminal-based strategy game with dynamic board generation and win/loss logic handling',
+    problem: 'Many beginner games lack structured game logic, input validation, and replayability in a terminal environment',
+    solution: 'Engineered a Python-based Battleship game featuring randomized ship placement, bullet management system, real-time board tracking, and structured game state control',
+    result: 'Delivered a replayable command-line game with robust input handling, win/lose conditions, and scalable architecture for future features like difficulty levels and multiplayer',
+    tech: ['Python', 'Object-Oriented Programming', 'Git', 'GitHub'],
+    github: 'https://github.com/Dani1157/battleshipsgame1',
+    live: '#'
+  },
+  {
+    title: 'Rock, Paper, Scissors – Interactive Web Game',
+    impact: 'Built a fully interactive browser-based game with real-time score tracking and dynamic result rendering',
+    problem: 'Simple browser games often lack structured logic, proper state management, and clear UX feedback for users',
+    solution: 'Developed a two-page responsive web application using JavaScript to handle game logic, random AI move generation, score tracking, DOM manipulation, and restart functionality without page refresh',
+    result: 'Delivered a smooth, user-friendly game experience with validated input handling, responsive design, and cross-browser compatibility deployed via GitHub Pages',
+    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Git', 'GitHub Pages'],
+    github: 'https://github.com/Dani1157/Rock-Paper-Scissors-game',
+    live: 'https://dani1157.github.io/Rock-Paper-Scissors-game/'
+  }
+];
 
   const projectsGrid = document.getElementById('projectsGrid');
   projects.forEach(project => {
