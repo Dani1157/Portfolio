@@ -14,71 +14,161 @@
   });
 
   // ---------- PROJECTS DATA ----------
-  const projects = [
+const projects = [
   {
-    title: 'NEXUS CSS Mentor – AI-Powered Learning Assistant',
-    impact: 'Built an intelligent CSS mentor that helps developers master web styling through natural conversation',
-    problem: 'Learning CSS is often frustrating with overly technical documentation and no interactive guidance. Beginners struggle with concepts like Flexbox, Grid, and animations without someone to explain them simply.',
-    solution: 'Created an AI-powered chat interface that teaches CSS through conversation, featuring multiple learning paths, smart contextual suggestions, real code examples, and support for multiple chat threads to organize different topics.',
-    result: 'Delivered a fully offline, zero-dependency learning tool with 10+ CSS topics, smart follow-up suggestions, persistent chat history, and a beautiful glass-morphism UI. Users can learn Flexbox, Grid, animations, and more through natural conversation.',
-    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Bootstrap 5', 'AI Pattern Matching', 'LocalStorage API'],
-    github: 'https://github.com/Dani1157/-AI-Chat-Interface',
-    live: 'https://dani1157.github.io/-AI-Chat-Interface/'
+    "title": "Vinyl Desk - Virtual Record Player",
+    "impact": "Created an immersive virtual record player with 50+ interactive features",
+    "problem": "Traditional music players lack personality and engagement.",
+    "solution": "Built a feature-rich web app combining a realistic vinyl record player with gamification elements.",
+    "result": "Delivered a fully functional music ecosystem with 40+ collectible fish and 10 weather effects.",
+    "tech": ["HTML5", "CSS3", "JavaScript", "Canvas API", "Web Audio API", "YouTube API"],
+    "github": "https://github.com/Dani1157/Vinyl-Desk.git",
+    "live": "https://dani1157.github.io/Vinyl-Desk/",
+    "image": "images/vinyldesk.jpg",  // Make sure this path is correct
+    "category": "Web App",
+    "year": "2025"
   },
   {
-    title: 'S&R Family and Friends – Cleaning Website',
-    impact: 'Delivered a high-performance business website scoring 98–100 across Lighthouse metrics',
-    problem: 'Local cleaning businesses often lack professional, secure, and high-converting websites to generate trust and inquiries',
-    solution: 'Designed and developed a fully responsive, security-focused cleaning service website with interactive features including review system, dynamic pricing calculator, form validation, dark mode, and performance optimization',
-    result: 'Achieved 100/100 desktop Lighthouse score, implemented enterprise-level front-end security features, and created a scalable foundation for future booking and customer portal integration',
-    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'EmailJS', 'GitHub Pages'],
-    github: 'https://github.com/Dani1157/Cleaning-Web',
-    live: 'https://dani1157.github.io/Cleaning-Web/'
+    "title": "NEXUS CSS Mentor",
+    "impact": "AI-Powered Learning Assistant that helps developers master CSS",
+    "problem": "Learning CSS is frustrating with overly technical documentation.",
+    "solution": "Created an AI-powered chat interface that teaches CSS through conversation.",
+    "result": "Delivered a fully offline learning tool with 10+ CSS topics.",
+    "tech": ["HTML5", "CSS3", "JavaScript", "Bootstrap 5", "AI Pattern Matching"],
+    "github": "https://github.com/Dani1157/-AI-Chat-Interface",
+    "live": "https://dani1157.github.io/-AI-Chat-Interface/",
+    "image": "images/nexus-css.jpg",
+    "category": "AI Tool",
+    "year": "2025"
   },
   {
-    title: 'Terminal Battleship – Strategy Game in Python',
-    impact: 'Developed a fully interactive terminal-based strategy game with dynamic board generation and win/loss logic handling',
-    problem: 'Many beginner games lack structured game logic, input validation, and replayability in a terminal environment',
-    solution: 'Engineered a Python-based Battleship game featuring randomized ship placement, bullet management system, real-time board tracking, and structured game state control',
-    result: 'Delivered a replayable command-line game with robust input handling, win/lose conditions, and scalable architecture for future features like difficulty levels and multiplayer',
-    tech: ['Python', 'Object-Oriented Programming', 'Git', 'GitHub'],
-    github: 'https://github.com/Dani1157/battleshipsgame1',
-    live: '#'
+    "title": "S&R Cleaning Website",
+    "impact": "High-performance business website scoring 98–100 on Lighthouse",
+    "problem": "Local cleaning businesses lack professional websites.",
+    "solution": "Designed a fully responsive, security-focused website with interactive features.",
+    "result": "Achieved 100/100 desktop Lighthouse score.",
+    "tech": ["HTML5", "CSS3", "JavaScript", "EmailJS"],
+    "github": "https://github.com/Dani1157/Cleaning-Web",
+    "live": "https://dani1157.github.io/Cleaning-Web/",
+    "image": "images/cleaning-web.jpg",
+    "category": "Business",
+    "year": "2025"
   },
   {
-    title: 'Rock, Paper, Scissors – Interactive Web Game',
-    impact: 'Built a fully interactive browser-based game with real-time score tracking and dynamic result rendering',
-    problem: 'Simple browser games often lack structured logic, proper state management, and clear UX feedback for users',
-    solution: 'Developed a two-page responsive web application using JavaScript to handle game logic, random AI move generation, score tracking, DOM manipulation, and restart functionality without page refresh',
-    result: 'Delivered a smooth, user-friendly game experience with validated input handling, responsive design, and cross-browser compatibility deployed via GitHub Pages',
-    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Git', 'GitHub Pages'],
-    github: 'https://github.com/Dani1157/Rock-Paper-Scissors-game',
-    live: 'https://dani1157.github.io/Rock-Paper-Scissors-game/'
+    "title": "Terminal Battleship",
+    "impact": "Interactive terminal-based strategy game",
+    "problem": "Beginner games lack structured logic and replayability.",
+    "solution": "Engineered a Python Battleship game with randomized ship placement.",
+    "result": "Delivered a replayable command-line game with robust input handling.",
+    "tech": ["Python", "OOP", "Git"],
+    "github": "https://github.com/Dani1157/battleshipsgame1",
+    "live": "#",
+    "image": "images/battleship.jpg",
+    "category": "Game",
+    "year": "2023"
+  },
+  {
+    "title": "Rock Paper Scissors",
+    "impact": "Interactive browser-based game with real-time score tracking",
+    "problem": "Simple games lack structured logic and UX feedback.",
+    "solution": "Developed a responsive web app with random AI move generation.",
+    "result": "Smooth user experience with validated input handling.",
+    "tech": ["HTML5", "CSS3", "JavaScript"],
+    "github": "https://github.com/Dani1157/Rock-Paper-Scissors-game",
+    "live": "https://dani1157.github.io/Rock-Paper-Scissors-game/",
+    "image": "images/rps.jpg",
+    "category": "Game",
+    "year": "2023"
   }
 ];
 
-  const projectsGrid = document.getElementById('projectsGrid');
-  projects.forEach(project => {
-    const card = document.createElement('div');
-    card.className = 'project-card';
-    card.innerHTML = `
-      <h3>${project.title}</h3>
-      <div class="project-impact">✨ ${project.impact}</div>
-      <div class="project-details">
-        <p><strong>Problem:</strong> ${project.problem}</p>
-        <p><strong>Solution:</strong> ${project.solution}</p>
-        <p><strong>Result:</strong> ${project.result}</p>
+// ---------- PORTFOLIO STYLE PROJECT ----------
+const projectsGrid = document.getElementById('projectsGrid');
+projectsGrid.innerHTML = ''; // Clear existing
+
+projects.forEach(project => {
+  const card = document.createElement('div');
+  card.className = 'portfolio-card';
+  
+  // Generate tech tags HTML
+  const techTags = project.tech.slice(0, 4).map(t => 
+    `<span class="portfolio-tech-tag">${t}</span>`
+  ).join('');
+  
+  // Create icon based on category
+  let iconClass = 'fa-code-branch';
+  if (project.category === 'Web App') iconClass = 'fa-laptop-code';
+  if (project.category === 'AI Tool') iconClass = 'fa-robot';
+  if (project.category === 'Business') iconClass = 'fa-briefcase';
+  if (project.category === 'Game') iconClass = 'fa-gamepad';
+  
+  // Check if image exists by trying to load it
+  const imagePath = project.image;
+  
+  card.innerHTML = `
+    <div class="portfolio-card-inner">
+      <!-- Front of card - Image/Title view -->
+      <div class="portfolio-card-front">
+        <div class="portfolio-image-placeholder" 
+             style="background-image: url('${imagePath}'); background-size: cover; background-position: center;">
+          <div class="portfolio-category-badge">${project.category} • ${project.year}</div>
+          <i class="fas ${iconClass} portfolio-icon" style="display: none;"></i>
+        </div>
+        <h3 class="portfolio-title">${project.title}</h3>
+        <p class="portfolio-impact">${project.impact}</p>
+        <div class="portfolio-tech-mini">
+          ${techTags}
+        </div>
       </div>
-      <div class="project-tech">
-        ${project.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+      
+      <!-- Back of card - Details view (appears on hover) -->
+      <div class="portfolio-card-back">
+        <h4>${project.title}</h4>
+        <div class="portfolio-back-content">
+          <p><strong>Problem:</strong> ${project.problem}</p>
+          <p><strong>Solution:</strong> ${project.solution}</p>
+          <p><strong>Result:</strong> ${project.result}</p>
+        </div>
+        <div class="portfolio-back-tech">
+          ${project.tech.map(t => `<span>${t}</span>`).join('')}
+        </div>
+        <div class="portfolio-back-links">
+          <a href="${project.github}" class="portfolio-link"><i class="fab fa-github"></i> Code</a>
+          <a href="${project.live}" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live</a>
+        </div>
       </div>
-      <div class="project-links">
-        <a href="${project.github}" class="project-link"><i class="fab fa-github"></i> Code</a>
-        <a href="${project.live}" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-      </div>
-    `;
-    projectsGrid.appendChild(card);
-  });
+    </div>
+  `;
+  
+  // Add error handling for images
+  const imgContainer = card.querySelector('.portfolio-image-placeholder');
+  const icon = card.querySelector('.portfolio-icon');
+  
+  // Create a new Image object to test if the image loads
+  const testImg = new Image();
+  testImg.onload = function() {
+    // Image loaded successfully - hide icon, show image
+    icon.style.display = 'none';
+    imgContainer.style.backgroundImage = `url('${imagePath}')`;
+  };
+  testImg.onerror = function() {
+    // Image failed to load - show colored placeholder with icon
+    icon.style.display = 'block';
+    imgContainer.style.backgroundImage = 'none';
+    
+    // Set a gradient background color based on category
+    let gradientColor = '#6c5ce7'; // default purple
+    if (project.category === 'AI Tool') gradientColor = '#00fff5';
+    if (project.category === 'Business') gradientColor = '#ff79c6';
+    if (project.category === 'Game') gradientColor = '#ffb86c';
+    if (project.category === 'Web App') gradientColor = '#8be9fd';
+    
+    imgContainer.style.background = `linear-gradient(135deg, ${gradientColor} 0%, ${gradientColor}dd 100%)`;
+  };
+  testImg.src = imagePath;
+  
+  projectsGrid.appendChild(card);
+});
 
   // ========== EPIC GAME SYSTEM ==========
   const canvas = document.getElementById('gameCanvas');
@@ -802,3 +892,4 @@
   resetGame();
   gameLoop();
 })();
+
