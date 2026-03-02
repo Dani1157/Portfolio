@@ -78,7 +78,7 @@ const projects = [
     "live": "https://dani1157.github.io/Rock-Paper-Scissors-game/",
     "image": "images/rps.jpg",
     "category": "Game",
-    "year": "2023"
+    "year": "V2025"
   }
 ];
 
